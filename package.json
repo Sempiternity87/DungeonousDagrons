@@ -1,0 +1,12 @@
+{
+"name": "dungeonous-dagrons",
+"version": "0.0.1",
+"description": "Simple tools for pen and paper RPGs.",
+"licenses" : [{"type": "MIT", "url": "https://www.opensource.org/licenses/mit-license.php"}],
+"author":{"name": "Conrad H.", "email": "mrr4dd@gmail.com"},
+"dependencies": 
+  {
+  "chance": "1.0.12",
+  "angular": "1.6.6"
+  }
+}
