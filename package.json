@@ -2,7 +2,11 @@
 "name": "dungeonous-dagrons",
 "version": "0.0.1",
 "description": "Simple tools for pen and paper RPGs.",
-"licenses" : [{"type": "MIT", "url": "https://www.opensource.org/licenses/mit-license.php"}],
+"license" : "UNLICENSED",
+"repository" :
+  { "type" : "git",
+    "url" : "https://github.com/mrradd/DungeonousDagrons"
+  },
 "author":{"name": "Conrad H.", "email": "mrr4dd@gmail.com"},
 "dependencies": 
   {
