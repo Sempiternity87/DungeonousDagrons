@@ -1,3 +1,6 @@
-<div>
-  Dice.
+<div ng-repeat="die in $ctrl.dice">
+  <img src="{{die.image}}"></img>
+  <label>Quantity</label><input type="text">
+  <label>Modifier</label><input type="text">
+  <label>Result</label><input type="text">
 </div>
