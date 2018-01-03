@@ -1,6 +1,9 @@
+<!-- TODO CH  STYLE. -->
+
+<h1>Dice</h1>
 <div ng-repeat="die in $ctrl.dice">
-  <img src="{{die.image}}"></img>
-  <label>Quantity</label><input type="text">
-  <label>Modifier</label><input type="text">
-  <label>Result</label><input type="text">
+  <button ng-click="$ctrl.roll(die)"><img src="{{die.image}}" width="50px" height="50px"></img></button>
+  <label>Quantity</label><input type="text" ng-model="die.quantity"></input>
+  <label>Modifier</label><input type="text" ng-model="die.modifier"></input>
+  <label>Result</label><input type="text" ng-model="die.result"></input>
 </div>
