@@ -21,7 +21,7 @@
   *****************************************************************************/
   .component("dice",
     {
-    templateUrl:"app/dice/dice.html",
+    templateUrl:"app/routes/dice/dice.html",
     controller: DiceController
     });
     
@@ -75,33 +75,7 @@
       
       for(; i < qty; i++)
         {
-        /** D100 */
-        if(sides == 100)
-          result += Number(chance.d100());
-        
-        /** D20 */
-        if(sides == 20)
-          result += Number(chance.d20());
-        
-        /** D12 */
-        if(sides == 12)
-          result += Number(chance.d12());
-        
-        /** D10 */
-        if(sides == 10)
-          result += Number(chance.d10());
-        
-        /** D8 */
-        if(sides == 8)
-          result += Number(chance.d8());
-        
-        /** D6 */
-        if(sides == 6)
-          result += Number(chance.d6());
-        
-        /** D4 */
-        if(sides == 4)
-          result += Number(chance.d4());
+        result += Number(chance["d"+ sides]());
         }
       
       die.result += Number(die.modifier) + result;

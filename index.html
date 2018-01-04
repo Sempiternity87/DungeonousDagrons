@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
 </head>
-<body ng-app="app">
+<body>
 
-  <dice></dice>
-  
-  <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<div ng-app="app">
+  <a href="#!/dice">Dice</a>
+  <div ng-view></div>
+</div>
+
+  <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="node_modules/chance/dist/chance.min.js"></script>
   <script type="text/javascript" src="app/app.js"></script>
-  <script type="text/javascript" src="app/dice/dice.js"></script>
+  <script type="text/javascript" src="app/routes/dice/dice.js"></script>
 </body>
 </html>
