@@ -5,17 +5,22 @@
 </head>
 <body>
 
-<div ng-app="app">
-  <a href="#!/dice">Dice</a>
-  <div ng-view></div>
-</div>
+  <div ng-app="app">
+    <header></header>
+    <div ng-view></div>
+  </div>
 
   <script type="text/javascript" src="node_modules/angular/angular.js"></script>
   <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="node_modules/chance/dist/chance.min.js"></script>
+  
   <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/elements/header/header.js"></script>
+  <script type="text/javascript" src="app/routes/characterSheet/characterSheet.js"></script>
   <script type="text/javascript" src="app/routes/dice/dice.js"></script>
+  <script type="text/javascript" src="app/routes/initiativeTracker/initiativeTracker.js"></script>
+  <script type="text/javascript" src="app/routes/welcome/welcome.js"></script>
 </body>
 </html>

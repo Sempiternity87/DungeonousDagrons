@@ -28,7 +28,7 @@
   /*****************************************************************************
   * DiceController */
   /**
-  * Controller for the Form Dice component.
+  * Controller for the Dice component.
   *****************************************************************************/
   function DiceController($scope)
     {
