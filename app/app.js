@@ -3,7 +3,8 @@
 /** 
 * Main application module.
 ******************************************************************************/
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module("app", ["ngRoute", "ui.grid", "ui.grid.expandable", "ui.grid.autoResize", "ui.bootstrap",
+  "ui.grid.saveState", "ui.grid.edit", "ui.grid.draggable-rows"]);
 
 /******************************************************************************
 * Config - Route Provider */
@@ -13,7 +14,6 @@ var app = angular.module('app', ['ngRoute']);
 app.config(function($routeProvider)
   {
   $routeProvider
-  //.when('/',        {templateUrl: "index.html"}) //TODO CH  FOR SOME REASON  I GET MASSIVE NG-VIEW RECURSION IF USE INDEX IN ROUTE
   .when('/',                  {template: "<welcome></welcome>"})
   .when('/dice',              {template: "<dice></dice>"})
   .when('/initiativeTracker', {template: "<initiative-tracker></initiative-tracker>"})
