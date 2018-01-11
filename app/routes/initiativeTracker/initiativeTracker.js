@@ -26,37 +26,21 @@
     var id = 0;
     
     /** Definition for an object on the grid. */
-    mThis.trackableObj =
+    mThis.character =
       {
       name: "", //Name of character.
       init: 0,  //Initiative.
       hp: 0,    //Health Points.
       ac: 0,    //Armor Class.
+      touch: 0, //Touch AC.
       bab: 0,   //Base Attack Bonus.
       cmb: 0,   //Combat Maneuver Bonus.
       cmd: 0,   //Combat Maneuver Defense.
       id: 0     //ID of object.
       };
     
-    mThis.trackerGrid = 
-      {
-      rowTemplate: '<div grid="grid" class="ui-grid-draggable-row" draggable="true"><div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name" class="ui-grid-cell" ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader, \'custom\': true }" ui-grid-cell></div></div>',
-      appScopeProvider: $scope,
-      minRowsToShow: 5,
-      enableColumnMenus: false,
-      enableFiltering: false,
-      enableSorting: false,
-      enableCellEditOnFocus: true,
-      columnDefs:[{field: "name", displayName: "Name"},
-                  {field: "init", displayName: "Initiative"},
-                  {field: "hp",   displayName: "HP"},
-                  {field: "ac",   displayName: "AC"},
-                  {field: "bab",  displayName: "BAB"},
-                  {field: "cmb",  displayName: "CMB"},
-                  {field: "cmd",  displayName: "CMD"},
-                  {field: "id",   displayName: "-", cellTemplate:"<button ng-click='grid.appScope.$ctrl.remove(row.entity.id)'>Remove</button>"}],
-      data: []
-      };
+    /** List of characters in the table.*/
+    mThis.characterList = [];
       
     /**************************************************************************
     * $onInit */
@@ -65,6 +49,8 @@
     **************************************************************************/
     mThis.$onInit = function()
       {
+      id++;
+      mThis.characterList.push({id: id});
       };
       
     /**************************************************************************
@@ -75,9 +61,19 @@
     mThis.add = function()
       {
       id++;
-      mThis.trackerGrid.data.push({id: id});
+      mThis.characterList.push({id: id});
       };
       
+    /**************************************************************************
+    * down */
+    /**
+    * Moves the object one down in the list.
+    **************************************************************************/
+    mThis.down = function(id)
+      {
+      console.log(id + " down");
+      };
+
     /**************************************************************************
     * remove */
     /**
@@ -85,8 +81,17 @@
     **************************************************************************/
     mThis.remove = function(id)
       {
-      mThis.trackerGrid.data = mThis.trackerGrid.data.filter(function(e){ return e.id != id; });
+      mThis.characterList = mThis.characterList.filter(function(e){ return e.id != id; });
       };
       
+    /**************************************************************************
+    * up */
+    /**
+    * Moves the object one up in the list.
+    **************************************************************************/
+    mThis.up = function(id)
+      {
+      console.log(id + " up");
+      };
     }//END InitiativeTrackerController
   })();
