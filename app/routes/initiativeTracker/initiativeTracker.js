@@ -135,7 +135,7 @@
       var index = mThis.characterList.indexOf(character);
       
       /** If at the end of the list, do nothing. */
-      if(index + 1 > 0)
+      if(index > 0)
         {
         var temp = mThis.characterList[index];
 
