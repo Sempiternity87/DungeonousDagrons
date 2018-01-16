@@ -78,10 +78,9 @@
       /** If at the end of the list, do nothing. */
       if(index + 1 < mThis.characterList.length)
         {
-        var temp  = mThis.characterList[index];
-        var temp2 = mThis.characterList[index + 1];
-      
-        mThis.characterList[index]     = temp2;
+        var temp = mThis.characterList[index];
+        
+        mThis.characterList[index]     = mThis.characterList[index + 1];
         mThis.characterList[index + 1] = temp;
         }
       };
@@ -138,10 +137,9 @@
       /** If at the end of the list, do nothing. */
       if(index + 1 > 0)
         {
-        var temp  = mThis.characterList[index];
-        var temp2 = mThis.characterList[index - 1];
-      
-        mThis.characterList[index]     = temp2;
+        var temp = mThis.characterList[index];
+
+        mThis.characterList[index]     = mThis.characterList[index - 1];
         mThis.characterList[index - 1] = temp;
         }
       };
