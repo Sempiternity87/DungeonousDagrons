@@ -20,8 +20,60 @@
   /**
   * Controller for the Character Sheet component.
   *****************************************************************************/
-  function CharacterSheetController($scope)
+  function CharacterSheetController($scope, Character)
     {
     /** Reference to self. */ var mThis = this;
+    
+    /** Skill definition. */
+    mThis.skill =
+      {
+      id: 0
+      ,name: ""
+      ,ranks: 0
+      ,abilityMod: ""
+      };
+      
+    /** Weapon definition. */
+    mThis.weapon =
+      {
+      id: 0
+      ,name: ""
+      ,attackBonus: 0
+      ,critical: ""
+      ,type: ""
+      ,range: 0
+      ,ammunition: 0
+      ,damage: ""
+      };
+      
     }//END CharacterSheetController
   })();
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,5 +1,4 @@
 
-
 <div class="container">
   <div class="row">
     <h1>Initiative Tracker</h1>
@@ -23,10 +22,31 @@
 
         <tr ng-repeat="c in $ctrl.characterList">
           <td>
-            <button type="button" class="btn btn-info" ng-click="$ctrl.up(c)"><span class="glyphicon glyphicon-arrow-up"></span></button>
-            <button type="button" class="btn btn-info" ng-click="$ctrl.down(c)"><span class="glyphicon glyphicon-arrow-down"></span></button>
-            <button type="button" class="btn btn-danger" ng-click="$ctrl.remove(c.id)"><span class="glyphicon glyphicon-remove"></span></button>
+            <!--Move up button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-info" ng-click="$ctrl.up(c)">
+                <span class="tTipText">Move up.</span>
+                <span class="glyphicon glyphicon-arrow-up"></span>
+              </button>
+            </div>
+            
+            <!--Move down button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-info" ng-click="$ctrl.down(c)">
+                <span class="tTipText">Move down.</span>
+                <span class="glyphicon glyphicon-arrow-down"></span>
+              </button>
+            </div>
+            
+            <!--Remove button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-danger" ng-click="$ctrl.remove(c.id)">
+                <span class="tTipText">Remove.</span>
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </div>
           </td>
+          
           <td><input class="form-control" style="width:200px" ng-model="c.name"></input></td>
           <td><input class="form-control" style="width:75px" ng-model="c.init"></input></td>
           <td><input class="form-control" style="width:75px" ng-model="c.hp"></input></td>
