@@ -19,8 +19,6 @@
     * application.
     *
     * @param  src  Source object to populate properties.
-    * NOTE: Getters and Setters may be overkill, but I would like a little
-    * more control over data flow.
     **************************************************************************/
     function Character(src)
       {
