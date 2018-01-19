@@ -298,7 +298,14 @@
         get: function(){ return mCharacter.languages; }
         set: function(val){ return mCharacter.languages = val; }
         });
-      
+
+      /** Accessor for Level, string. */
+      Object.defineProperty(mThis, 'level',
+        {
+        get: function(){ return mCharacter.level; }
+        set: function(val){ return mCharacter.level = val; }
+        });
+        
       /** Accessor for Name, string. */
       Object.defineProperty(mThis, 'name',
         {
