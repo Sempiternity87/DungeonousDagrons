@@ -98,6 +98,10 @@
         
         mThis.characterList[index]     = mThis.characterList[index + 1];
         mThis.characterList[index + 1] = temp;
+        
+        /** Update the index, so the marker updates properly. */
+        if(mThis.characterList[index + 1].currentTurn)
+          mThis.currentCharIndex = index + 1;
         }
       };
 
@@ -140,7 +144,6 @@
     mThis.orderByInitiative = function()
       {
       var swapped = false;
-      mThis.characterList[mThis.currentCharIndex].currentTurn = false;
       
       do
         {
@@ -148,6 +151,9 @@
         
         for(var i = 0; i < mThis.characterList.length - 1; i++)
           {
+          /** May as well reset currentTurn here, so we don't have to go through the list again later. */
+          mThis.characterList[i].currentTurn = false;
+          
           if(Number(mThis.characterList[i].init) < Number(mThis.characterList[i+1].init))
             {
             var temp = mThis.characterList[i];
@@ -220,6 +226,10 @@
 
         mThis.characterList[index]     = mThis.characterList[index - 1];
         mThis.characterList[index - 1] = temp;
+        
+        /** Update the index, so the marker updates properly. */
+        if(mThis.characterList[index - 1].currentTurn)
+          mThis.currentCharIndex = index - 1;
         }
       };
     
