@@ -48,7 +48,7 @@
     mThis.currentCharIndex = 0;
       
     /** Header. */
-    mThis.header = "00':00'' Round: 0";
+    mThis.header = "00':00'' - Round: 0";
       
     /** Counts how many minutes have passed. */
     mThis.minuteCounter = 0;
