@@ -99,9 +99,9 @@
         mThis.characterList[index]     = mThis.characterList[index + 1];
         mThis.characterList[index + 1] = temp;
         
-        /** Update the index, so the marker updates properly. */
-        if(mThis.characterList[index + 1].currentTurn)
-          mThis.currentCharIndex = index + 1;
+        var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
+        var i   = mThis.characterList.findIndex(function(c){ return c == obj; });
+        mThis.currentCharIndex = i
         }
       };
 
@@ -227,9 +227,9 @@
         mThis.characterList[index]     = mThis.characterList[index - 1];
         mThis.characterList[index - 1] = temp;
         
-        /** Update the index, so the marker updates properly. */
-        if(mThis.characterList[index - 1].currentTurn)
-          mThis.currentCharIndex = index - 1;
+        var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
+        var i   = mThis.characterList.findIndex(function(c){ return c == obj; });
+        mThis.currentCharIndex = i
         }
       };
     
