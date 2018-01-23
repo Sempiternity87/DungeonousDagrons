@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <h1>Initiative Tracker</h1>
+    <h3>{{$ctrl.header}}</h3>
   </div>
 
   <div class="row">
@@ -20,7 +21,7 @@
           <th style="width:75px">CMD</th>
         </tr>
 
-        <tr ng-repeat="c in $ctrl.characterList">
+        <tr ng-class="{'info': c.currentTurn}" ng-repeat="c in $ctrl.characterList">
           <td>
             <!--Move up button. -->
             <div class="tTip">
@@ -62,6 +63,8 @@
 
   <div class="row">
     <button class="btn btn-success" ng-click="$ctrl.add()">Add Character</button>
+    <button class="btn btn-info   " ng-click="$ctrl.nextTurn()">Next Turn</button>
+    <button class="btn btn-info   " ng-click="$ctrl.previousTurn()">Previous Turn</button>
     <button class="btn btn-warning" ng-click="$ctrl.orderByInitiative()">Order by Initiative</button>
   </div>
 </div>
