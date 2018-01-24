@@ -210,7 +210,6 @@
       /** Set the new turn owner. */
       if(mThis.currentCharIndex > -1)
         mThis.characterList[mThis.currentCharIndex].currentTurn = true;
-        
       };
      
     /**************************************************************************
