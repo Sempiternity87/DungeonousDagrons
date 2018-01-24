@@ -2,9 +2,16 @@
 <div class="container">
   <div class="row">
     <h1>Initiative Tracker</h1>
-    <h3>{{$ctrl.header}}</h3>
+    <h3>{{$ctrl.minuteCounter}}:{{$ctrl.secondCounter}} - Round: {{$ctrl.roundCounter}}</h3><h1>{{$ctrl.turnOwner()}}</h1>
   </div>
-
+  
+  <div class="row">
+    <button class="btn btn-success" ng-click="$ctrl.add()">Add Character</button>
+    <button class="btn btn-info   " ng-click="$ctrl.nextTurn()">Next Turn</button>
+    <button class="btn btn-info   " ng-click="$ctrl.previousTurn()">Previous Turn</button>
+    <button class="btn btn-warning" ng-click="$ctrl.orderByInitiative()">Order by Initiative</button>
+  </div>
+  
   <div class="row">
     <div class="table-responsive">
       <table class="table table-striped table-condensed" style="width:1100px">
@@ -61,10 +68,5 @@
     </div>
   </div>
 
-  <div class="row">
-    <button class="btn btn-success" ng-click="$ctrl.add()">Add Character</button>
-    <button class="btn btn-info   " ng-click="$ctrl.nextTurn()">Next Turn</button>
-    <button class="btn btn-info   " ng-click="$ctrl.previousTurn()">Previous Turn</button>
-    <button class="btn btn-warning" ng-click="$ctrl.orderByInitiative()">Order by Initiative</button>
-  </div>
+
 </div>

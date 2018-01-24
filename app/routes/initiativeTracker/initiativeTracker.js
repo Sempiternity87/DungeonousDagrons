@@ -45,20 +45,17 @@
     mThis.characterList = [];
     
     /** Current index in the character array for determining turn. */
-    mThis.currentCharIndex = 0;
-      
-    /** Header. */
-    mThis.header = "00':00'' - Round: 0";
+    mThis.currentCharIndex = -1;
       
     /** Counts how many minutes have passed. */
-    mThis.minuteCounter = 0;
+    mThis.minuteCounter = "00";
     
     /** Counts how many seconds have passed. */
-    mThis.secondCounter = 0;
+    mThis.secondCounter = "00";
     
     /** Counts how many rounds have passed. */
     mThis.roundCounter  = 0;
-      
+    
     /**************************************************************************
     * $onInit */
     /**
@@ -67,7 +64,7 @@
     mThis.$onInit = function()
       {
       currentID++;
-      mThis.characterList.push({id: currentID, currentTurn: true});
+      mThis.characterList.push({id: currentID, name:"No Name", currentTurn: false});
       };
       
     /**************************************************************************
@@ -78,7 +75,7 @@
     mThis.add = function()
       {
       currentID++;
-      mThis.characterList.push({id: currentID});
+      mThis.characterList.push({id: currentID, name:"No Name"});
       };
       
     /**************************************************************************
@@ -116,7 +113,8 @@
     mThis.nextTurn = function()
       {
       /** Change turn for current character. */
-      mThis.characterList[mThis.currentCharIndex].currentTurn = false;
+      if(mThis.currentCharIndex >= 0)
+        mThis.characterList[mThis.currentCharIndex].currentTurn = false;
       
       /** Move to next character in list. */
       if(mThis.currentCharIndex < mThis.characterList.length - 1)
@@ -150,10 +148,7 @@
         swapped = false;
         
         for(var i = 0; i < mThis.characterList.length - 1; i++)
-          {
-          /** May as well reset currentTurn here, so we don't have to go through the list again later. */
-          mThis.characterList[i].currentTurn = false;
-          
+          {         
           if(Number(mThis.characterList[i].init) < Number(mThis.characterList[i+1].init))
             {
             var temp = mThis.characterList[i];
@@ -166,10 +161,6 @@
           }
         }
       while(swapped);
-      
-      /** Set the current turn marker to the top of the list. */
-      mThis.currentCharIndex = 0;
-      mThis.characterList[mThis.currentCharIndex].currentTurn = true;
       };
      
     /**************************************************************************
@@ -210,6 +201,18 @@
       };
      
     /**************************************************************************
+    * turnOwner */
+    /**
+    * Finds the current turn owner, and return's a string showing turn
+    * possession.
+    **************************************************************************/
+    mThis.turnOwner = function()
+      {
+      var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
+      return !obj ? "" : obj.name + "'s turn";
+      }
+     
+    /**************************************************************************
     * up */
     /**
     * Moves the object one up in the list by decreasing its index and
@@ -236,24 +239,18 @@
     /**************************************************************************
     * updateRound */
     /**
-    * Updates the round counter and time/header information.
+    * Updates the round counter and time counters.
     **************************************************************************/
     var updateRound = function()
       {
       mThis.roundCounter++;
+
+      var seconds = ((mThis.roundCounter * 6) % 60);
+      var minutes = (Math.floor(mThis.roundCounter / 10));
       
-      /** Flip the seconds back to 0 and increment the minutes. */
-      if(mThis.secondCounter >= 54)
-        {
-        mThis.secondCounter = 0;
-        mThis.minuteCounter += 1;
-        }
-      else
-        {
-        mThis.secondCounter += 6;
-        }
-        
-      mThis.header = ("0" + mThis.minuteCounter).slice(-2) + "': " + ("0" + mThis.secondCounter).slice(-2) + "'' - Round: " + mThis.roundCounter;
-      }
+      mThis.secondCounter = ("0" + seconds).slice(-2);
+      mThis.minuteCounter = ("0" + minutes).slice(-2);
+      };
+      
     }//END InitiativeTrackerController
   })();
