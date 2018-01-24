@@ -1,0 +1,67 @@
+
+<div class="container">
+  <div class="row">
+    <h1>Initiative Tracker</h1>
+    <h3>{{$ctrl.minuteCounter}}:{{$ctrl.secondCounter}} - Round: {{$ctrl.roundCounter}}</h3>
+    <h2>{{$ctrl.turnOwner() ? $ctrl.turnOwner().name + "'s turn - Spell Save DC: " + $ctrl.turnOwner().dc : ""}}</h2>
+  </div>
+
+  <div class="row" style="padding:5px 0px">
+    <button class="btn btn-success" ng-click="$ctrl.add()">Add Character</button>
+    <button class="btn btn-info   " ng-click="$ctrl.nextTurn()">Next Turn</button>
+    <button class="btn btn-warning" ng-click="$ctrl.orderByInitiative()">Order by Initiative</button>
+    <button class="btn btn-danger " ng-click="$ctrl.newEncounter()">New Encounter</button>
+  </div>
+
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table table-striped table-condensed">
+
+        <tr>
+          <th class="col-md-2"></th>
+          <th style="text-align:center" class="col-md-2">Name</th>
+          <th style="text-align:center" class="col-md-1">Initiative</th>
+          <th style="text-align:center" class="col-md-1">HP</th>
+          <th style="text-align:center" class="col-md-1">AC</th>
+          <th style="text-align:center" class="col-md-1">Spell DC</th>
+          <th style="text-align:center" class="col-md-4">Notes</th>
+        </tr>
+
+        <tr ng-class="{'info': c.currentTurn}" ng-repeat="c in $ctrl.characterList">
+          <td>
+            <!--Move up button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-info" ng-click="$ctrl.up(c)">
+                <span class="tTipText">Move up.</span>
+                <span class="glyphicon glyphicon-arrow-up"></span>
+              </button>
+            </div>
+            
+            <!--Move down button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-info" ng-click="$ctrl.down(c)">
+                <span class="tTipText">Move down.</span>
+                <span class="glyphicon glyphicon-arrow-down"></span>
+              </button>
+            </div>
+            
+            <!--Remove button. -->
+            <div class="tTip">
+              <button type="button" class="btn btn-danger" ng-click="$ctrl.remove(c.id)">
+                <span class="tTipText">Remove.</span>
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </div>
+          </td>
+          
+          <td><input class="form-control" ng-model="c.name"></input></td>
+          <td><input class="form-control" ng-model="c.init"></input></td>
+          <td><input class="form-control" ng-model="c.hp"></input></td>
+          <td><input class="form-control" ng-model="c.ac"></input></td>
+          <td><input class="form-control" ng-model="c.dc"></input></td>
+          <td><input class="form-control" ng-model="c.notes"></input></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
