@@ -198,6 +198,37 @@
     mThis.remove = function(id)
       {
       mThis.characterList = mThis.characterList.filter(function(e){ return e.id != id; });
+      
+      /** Move up a position in the list. */
+      if(mThis.currentCharIndex >= mThis.characterList.length)
+        mThis.currentCharIndex--;  
+    
+      /** Deleted the last element. */
+      if(mThis.characterList.length <= 0)
+        mThis.currentCharIndex = -1;
+      
+      /** Set the new turn owner. */
+      if(mThis.currentCharIndex > -1)
+        mThis.characterList[mThis.currentCharIndex].currentTurn = true;
+        
+      };
+     
+    /**************************************************************************
+    * reset */
+    /**
+    * Resets counters and turn owner.
+    **************************************************************************/
+    mThis.reset = function()
+      {
+      mThis.secondCounter = "00";
+      mThis.minuteCounter = "00";
+      mThis.roundCounter = 0;
+      
+      /** Reset all turn values. Overkill. */
+      for (var i = 0; i < mThis.characterList.length; i++)
+        mThis.characterList[i].currentTurn = false;
+      
+      mThis.currentCharIndex = -1;
       };
      
     /**************************************************************************
