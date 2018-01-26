@@ -5,31 +5,31 @@
   angular.module("app")
  
   /****************************************************************************
-  * Constructor Factory: Skill5e
+  * Constructor Factory: Ability5e
   *
-  * Returns a constructor function to create objects to manage Skill
+  * Returns a constructor function to create objects to manage Ability
   * objects.
   ****************************************************************************/
-  .factory("Skill5e",function()
+  .factory("Ability5e",function()
     {
     /**************************************************************************
-    * Class: Skill
+    * Class: Ability
     *
-    * This class manages the skill data object for the Character Sheet
+    * This class manages the Ability data object for the Character Sheet
     * application.
     *
     * @param  src  Source object to populate properties.
     **************************************************************************/
-    function Skill5e(src)
+    function Ability5e(src)
       {
       /** Self reference. */
       var mThis = this;
       
       /** This design pattern prevents the source object reference from being modified. */
-      /** Internal Skill object. */
-      var mSkill = src || {};
+      /** Internal Ability object. */
+      var mAbility = src || {};
       /** Accessor for source object. */
-      mThis.getSource = function() { return angular.copy(mSkill); };
+      mThis.getSource = function() { return angular.copy(mAbility); };
 
       /************************************************************************
       * Methods
@@ -40,39 +40,35 @@
       /** Accessor for ID. */
       Object.defineProperty(mThis, 'id',
         {
-        get: function(){ return Number(mSkill.id); }
+        get: function(){ return Number(mAbility.id); }
         });
 
-      /** Accessor for Ability Modifier. */
-      Object.defineProperty(mThis, 'abilityMod',
+      /** Accessor for Ability score. */
+      Object.defineProperty(mThis, 'score',
         {
-        get: function(){ return Number(mSkill.abilityMod); },
-        set: function(val){ return mSkill.abilityMod = Number(val); }
-        });
-      
-      /** Accessor for double proficient skill. */
-      Object.defineProperty(mThis, 'isDoubleProficient',
-        {
-        get: function(){ return mSkill.isDoubleProficient; },
-        set: function(val){ return mSkill.isProcient = val; }
-        });
-      
-      /** Accessor for proficient skill. */
-      Object.defineProperty(mThis, 'isProficient',
-        {
-        get: function(){ return mSkill.isProficient; },
-        set: function(val){ return mSkill.isProficient = val; }
+        get: function(){ return Number(mAbility.score); }
         });
 
+      /** Accessor for ShortName. */
+      Object.defineProperty(mThis, 'shortName',
+        {
+        get: function() { return mAbility.shortName; }
+        });
+      
       /** Accessor for Name. */
       Object.defineProperty(mThis, 'name',
         {
-        get: function(){ return mSkill.name; },
-        set: function(val){ return mSkill.name = val; }
+        get: function(){ return mAbility.name; }
+        });
+      
+      /** Accessor for Ability mod. */
+      Object.defineProperty(mThis, 'mod',
+        {
+        get: function() { return Number(Math.floor((mThis.score - 10) / 2)); }
         });
       }
       
-    return Skill;
-    });//END Skill factory.
+    return Ability5e;
+    });//END Ability 5e factory.
   })();
   

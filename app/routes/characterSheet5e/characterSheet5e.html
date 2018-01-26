@@ -1,82 +1,125 @@
 <h1>Character Sheet</h1>
-<div class="row">
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Name</label>
-      <div class="col-sm-3">
-        <input class="form-control" type="text" ng-model="$ctrl.character.name"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Level</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.level"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Experience</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.experience"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Race</label>
-      <div class="col-sm-2">
-        <input class="form-control" type="text" ng-model="$ctrl.character.race"/>
-      </div>
-      
-      <div class="col-sm-1"></div>
-    </div>
-  </form>
+<div class="col-sm-4">
+  <div class="form-group">
+    <label class="control-label">Name</label>
+    <input class="form-control" type="text" ng-model="$ctrl.character.name"/>
+  </div>
 
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Size</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.size"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Height</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.height"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Hair</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.hair"/>
-      </div>
+  <div class="col-sm-3" style="text-align: center; padding-bottom:10px">
 
-      <label class="col-sm-1 control-label">Eyes</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.eyes"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Weight</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.weight"/>
-      </div>
-      <div class="col-sm-2"></div>
-    </div>
-  </form>
-
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Gender</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.gender"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Age</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.age"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Alignment</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.alignment"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Max HP</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="$ctrl.character.maxHP"/>
+    <div ng-repeat="ability in $ctrl.character.abilities">
+      <label class="control-label">{{ability.name}}</label>
+      <div class="row no-gutters">
+        <div class="col-sm-6"><input class="form-control" style="text-align: center" type="text" ng-model="ability.score" /></div>
+        <div class="col-sm-6"><input class="form-control" style="text-align: center; font-weight:bold" type="text" ng-model="ability.mod" /></div>
       </div>
     </div>
-  </form>
+  </div>
+
+  <div class="col-sm-9" style="text-align: center; padding-bottom:10px">
+    <label class="control-label" style="font-weight: bold">Saving Throws</label>
+    <div class="container-fluid" style="border:solid 1px black; text-align:left">
+      <div ng-repeat="save in $ctrl.character.saves">
+        <div class="row">
+          <div class="col-sm-1"><input type="checkbox" ng-model="save.proficient" /></div>
+          <div class="col-sm-1"><input type="checkbox" ng-model="save.doubleProficient" /></div>
+          <label class="col-sm-8 control-label" style="font-size: 10px">{{save.name}}</label>
+          <label class="col-sm-1 control-label">{{save.value}}</label>
+        </div>
+      </div>
+    </div>
+    
+    <label class="control-label" style="font-weight: bold">Skills</label>
+    <div class="container-fluid" style="border:solid 1px black; text-align:left">
+      <div ng-repeat="skill in $ctrl.character.skills">
+        <div class="row">
+          <div class="col-sm-1"><input type="checkbox" ng-model="skill.proficient" /></div>
+          <div class="col-sm-1"><input type="checkbox" ng-model="skill.doubleProficient" /></div>
+          <label class="col-sm-8 control-label" style="font-size: 10px">{{skill.name}} ({{skill.abilityName}})</label>
+          <label class="col-sm-1 control-label">{{skill.value}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="col-sm-8">
+
+  <div class="row">
+    <form class="form-horizontal">
+      <div class="col-sm-12 form-group">
+        
+        <label class="col-sm-1 control-label">Level</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.level"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Experience</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.experience"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Race</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="text" ng-model="$ctrl.character.race"/>
+        </div>
+        
+        <div class="col-sm-1"></div>
+      </div>
+    </form>
+
+    <form class="form-horizontal">
+      <div class="col-sm-12 form-group">
+        <label class="col-sm-1 control-label">Size</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.size"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Height</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.height"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Hair</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.hair"/>
+        </div>
+
+        <label class="col-sm-1 control-label">Eyes</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.eyes"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Weight</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.weight"/>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </form>
+
+    <form class="form-horizontal">
+      <div class="col-sm-12 form-group">
+        <label class="col-sm-1 control-label">Gender</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.gender"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Age</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.age"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Alignment</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.alignment"/>
+        </div>
+        
+        <label class="col-sm-1 control-label">Max HP</label>
+        <div class="col-sm-1">
+          <input class="form-control" type="text" ng-model="$ctrl.character.maxHP"/>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

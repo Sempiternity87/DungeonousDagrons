@@ -19,6 +19,11 @@ z-index: 1;
 top: -20px;
 }
 
+.no-gutters > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 .tTip:hover .tTipText {
 visibility: visible;
 }

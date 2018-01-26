@@ -11,6 +11,7 @@
     "alignment":"Good",
     "experience":0,
     "armorClass":15,
+    "proficiency":2,
     "levels":
         [
             {
@@ -62,7 +63,7 @@
             {
                 "name":"Intelligence",
                 "shortName":"INT",
-                "score":"13"
+                "score":"14"
             },
             {
                 "name":"Wisdom",
