@@ -1,87 +1,137 @@
 <h1>Character Sheet</h1>
+
+<!--Character Info-->
 <div class="row">
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Name</label>
-      <div class="col-sm-3">
-        <input class="form-control" type="text"/>
+  <div class="col-md-12">
+    <div class="col-md-6 form-group form-horizontal">
+      
+      <!--Name/Exp-->
+      <div class="row">
+        <label class="col-md-2 control-label">Name</label>
+        <div class="col-md-5">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Experience</label>
+        <div class="col-md-2">
+          <input class="form-control" type="text"/>
+        </div>
       </div>
       
-      <label class="col-sm-1 control-label">Level</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Experience</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Race</label>
-      <div class="col-sm-2">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <div class="col-sm-1"></div>
-    </div>
-  </form>
-
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Size</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Height</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Hair</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
+      <!--Class1/Level-->
+      <div class="row nudgeDown">
+        <label class="col-md-2 control-label">Class 1</label>
+        <div class="col-md-5">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Level</label>
+        <div class="col-md-2">
+          <input class="form-control" type="text"/>
+        </div>
       </div>
 
-      <label class="col-sm-1 control-label">Eyes</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Weight</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      <div class="col-sm-2"></div>
-    </div>
-  </form>
-
-  <form class="form-horizontal">
-    <div class="col-sm-12 form-group">
-      <label class="col-sm-1 control-label">Gender</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Age</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Alignment</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text"/>
-      </div>
-      
-      <label class="col-sm-1 control-label">Deity</label>
-      <div class="col-sm-2">
-        <input class="form-control" type="text"/>
-      </div>
-
-      <label class="col-sm-1 control-label">Homeland</label>
-      <div class="col-sm-2">
-        <input class="form-control" type="text"/>
+      <!--Class2/Level-->
+      <div class="row nudgeDown">
+        <label class="col-md-2 control-label">Class 2</label>
+        <div class="col-md-5">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Level</label>
+        <div class="col-md-2">
+          <input class="form-control" type="text"/>
+        </div>
       </div>
     </div>
-  </form>
+    
+    <!--Size/Height/Hair-->
+    <div class="col-md-6 form-group form-horizontal">
+      <div class="row">
+        <label class="col-md-1 control-label">Size</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-1 control-label">Height</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-1 control-label">Hair</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+      </div>
+      
+      <!--Eyes/Weight/Race-->
+      <div class="row nudgeDown">
+        <label class="col-md-1 control-label">Eyes</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-1 control-label">Weight</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-1 control-label">Race</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+      </div>
+      
+      <!--Gender/Age/Alignment-->
+      <div class="row nudgeDown">
+        <label class="col-md-1 control-label">Gender</label>
+        <div class="col-md-3">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Age</label>
+        <div class="col-md-2">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Alignment</label>
+        <div class="col-md-2">
+          <input class="form-control" type="text"/>
+        </div>
+      </div>
+      
+      <!--Deity/Homeland-->
+      <div class="row nudgeDown">
+        <label class="col-md-1 control-label">Deity</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text"/>
+        </div>
+        
+        <label class="col-md-2 control-label">Homeland</label>
+        <div class="col-md-5">
+          <input class="form-control" type="text"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Abilities-->
+<div class="row">
+  <div class="col-md-3">
+    <table class="table table-striped" style="margin-left: 20px;">
+      <tr>
+        <th style="width:75px">Name</th>
+        <th style="width:75px">Score</th>
+        <th style="width:75px">Modifier</th>
+        <th style="width:75px">Temporary Adjustment</th>
+      </tr>
+      <tr ng-repeat="a in $ctrl.testAbilities">
+        <td>{{a.name}}</td>
+        <td><input class="form-control" ng-model="a.score"></input></td>
+        <td>{{a.calculateAttributeModifier()}}</td>
+        <td><input class="form-control" ng-model="a.tempAdjustment"></input></td>
+      </tr>
+    </table>
+  </div>
 </div>

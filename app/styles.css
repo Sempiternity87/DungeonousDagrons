@@ -1,3 +1,7 @@
+.nudgeDown{
+  margin-top: 5px;
+}
+
 /** Start tool tip definition. **/
 .tTip {
 position: relative;
