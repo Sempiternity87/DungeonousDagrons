@@ -69,8 +69,15 @@
           }
         });
       
+      /** Accessor for Ability Scores, object array. */
+      Object.defineProperty(mThis, 'abilities',
+        {
+        get: function(){ return mCharacter.abilities; },
+        set: function(val){ mCharacter.abilities = val; }
+        });
+      
       /** Accessor for Miscelaneous Armor Modifier, int. */
-      Object.defineProperty(mThis, 'asMiscMod',
+      Object.defineProperty(mThis, 'acMiscMod',
         {
         get: function(){ return Number(mCharacter.asMiscMod); },
         set: function(val){ mCharacter.asMiscMod = Number(val); }
@@ -82,14 +89,14 @@
         get: function(){ return Number(mCharacter.age); },
         set: function(val){ mCharacter.age = Number(val); }
         });
-        
+      
       /** Accessor for Alignment, string. */
       Object.defineProperty(mThis, 'alignment',
         {
         get: function(){ return mCharacter.alignment; },
         set: function(val){ mCharacter.alignment = val; }
         });
-            
+      
       /** Accessor for Bonus for wearing Armor, int. */
       Object.defineProperty(mThis, 'armorBonus',
         {
@@ -419,7 +426,7 @@
         set: function(val){ mCharacter.swimSpeed = Number(val); }
         });
 
-      /** Accessor for list of Weapons, array. */
+      /** Accessor for list of Weapons, object array. */
       Object.defineProperty(mThis, 'weapons',
         {
         get: function(){ return mCharacter.weapons; },

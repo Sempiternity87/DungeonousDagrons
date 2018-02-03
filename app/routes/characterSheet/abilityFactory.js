@@ -67,7 +67,7 @@
       /** Accessor for Ability Score. */
       Object.defineProperty(mThis, 'score',
         {
-        get: function(){ return Number(mAbility.score + mAbility.tempAdjustment); },
+        get: function(){ return Number((mAbility.score + mAbility.tempAdjustment) || 0); },
         set: function(val){ mAbility.score = Number(val); }
         });
       
