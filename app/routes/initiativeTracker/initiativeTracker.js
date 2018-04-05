@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /*****************************************************************************
   * Component: InitiativeTracker */
   /**
@@ -14,7 +14,7 @@
     templateUrl:"app/routes/initiativeTracker/initiativeTracker.html",
     controller: InitiativeTrackerController
     });
-    
+
   /*****************************************************************************
   * InitiativeTrackerController */
   /**
@@ -23,9 +23,9 @@
   function InitiativeTrackerController($scope)
     {
     /** Reference to self. */ var mThis = this;
-    
+
     /** Tracks global ID for assigning to list objects. */ var currentID = 0;
-    
+
     /** Definition for a character object on the table. */
     mThis.character =
       {
@@ -40,22 +40,22 @@
       ,id:          0  //ID of object.
       ,currentTurn: false //Indication it is this char's turn.
       };
-    
+
     /** List of characters in the table.*/
     mThis.characterList = [];
-    
+
     /** Current index in the character array for determining turn. */
     mThis.currentCharIndex = -1;
-      
+
     /** Counts how many minutes have passed. */
     mThis.minuteCounter = "00";
-    
+
     /** Counts how many seconds have passed. */
     mThis.secondCounter = "00";
-    
+
     /** Counts how many rounds have passed. */
     mThis.roundCounter  = 0;
-    
+
     /**************************************************************************
     * $onInit */
     /**
@@ -66,7 +66,7 @@
       currentID++;
       mThis.characterList.push({id: currentID, name:"No Name", currentTurn: false});
       };
-      
+
     /**************************************************************************
     * add */
     /**
@@ -77,7 +77,7 @@
       currentID++;
       mThis.characterList.push({id: currentID, name:"No Name"});
       };
-      
+
     /**************************************************************************
     * down */
     /**
@@ -87,15 +87,15 @@
     mThis.down = function(character)
       {
       var index = mThis.characterList.indexOf(character);
-      
+
       /** If at the end of the list, do nothing. */
       if(index < mThis.characterList.length - 1)
         {
         var temp = mThis.characterList[index];
-        
+
         mThis.characterList[index]     = mThis.characterList[index + 1];
         mThis.characterList[index + 1] = temp;
-        
+
         var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
         var i   = mThis.characterList.findIndex(function(c){ return c == obj; });
         mThis.currentCharIndex = i
@@ -115,24 +115,24 @@
       /** Change turn for current character. */
       if(mThis.currentCharIndex >= 0)
         mThis.characterList[mThis.currentCharIndex].currentTurn = false;
-      
+
       /** Move to next character in list. */
       if(mThis.currentCharIndex < mThis.characterList.length - 1)
         {
         mThis.currentCharIndex++;
         }
-      
+
       /** Loop back to the beginning of the list, then increment rounds, seconds, and minutes. */
       else
         {
         mThis.currentCharIndex = 0;
         updateRound();
         }
-      
+
       /** Change turn for next character. */
       mThis.characterList[mThis.currentCharIndex].currentTurn = true;
       };
-      
+
     /**************************************************************************
     * orderByInitiative */
     /**
@@ -142,27 +142,27 @@
     mThis.orderByInitiative = function()
       {
       var swapped = false;
-      
+
       do
         {
         swapped = false;
-        
+
         for(var i = 0; i < mThis.characterList.length - 1; i++)
-          {         
+          {
           if(Number(mThis.characterList[i].init) < Number(mThis.characterList[i+1].init))
             {
             var temp = mThis.characterList[i];
-            
+
             mThis.characterList[i]     = mThis.characterList[i + 1];
             mThis.characterList[i + 1] = temp;
-            
+
             swapped = true;
             }
           }
         }
       while(swapped);
       };
-     
+
     /**************************************************************************
     * previousTurn */
     /**
@@ -173,23 +173,23 @@
       {
       /** Change turn for current character. */
       mThis.characterList[mThis.currentCharIndex].currentTurn = false;
-      
+
       /** Move to next character in list. */
       if(mThis.currentCharIndex > 0)
         {
         mThis.currentCharIndex--;
         }
-      
+
       /** Prevent from going out of bounds. */
       else
         {
         mThis.currentCharIndex = 0;
         }
-      
+
       /** Change turn for next character. */
       mThis.characterList[mThis.currentCharIndex].currentTurn = true;
       };
-     
+
     /**************************************************************************
     * remove */
     /**
@@ -198,20 +198,20 @@
     mThis.remove = function(id)
       {
       mThis.characterList = mThis.characterList.filter(function(e){ return e.id != id; });
-      
+
       /** Move up a position in the list. */
       if(mThis.currentCharIndex >= mThis.characterList.length)
-        mThis.currentCharIndex--;  
-    
+        mThis.currentCharIndex--;
+
       /** Deleted the last element. */
       if(mThis.characterList.length <= 0)
         mThis.currentCharIndex = -1;
-      
+
       /** Set the new turn owner. */
       if(mThis.currentCharIndex > -1)
         mThis.characterList[mThis.currentCharIndex].currentTurn = true;
       };
-     
+
     /**************************************************************************
     * reset */
     /**
@@ -222,14 +222,14 @@
       mThis.secondCounter = "00";
       mThis.minuteCounter = "00";
       mThis.roundCounter = 0;
-      
+
       /** Reset all turn values. Overkill. */
       for (var i = 0; i < mThis.characterList.length; i++)
         mThis.characterList[i].currentTurn = false;
-      
+
       mThis.currentCharIndex = -1;
       };
-     
+
     /**************************************************************************
     * turnOwner */
     /**
@@ -241,7 +241,7 @@
       var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
       return !obj ? "" : obj.name + "'s turn";
       }
-     
+
     /**************************************************************************
     * up */
     /**
@@ -251,7 +251,7 @@
     mThis.up = function(character)
       {
       var index = mThis.characterList.indexOf(character);
-      
+
       /** If at the end of the list, do nothing. */
       if(index > 0)
         {
@@ -259,13 +259,13 @@
 
         mThis.characterList[index]     = mThis.characterList[index - 1];
         mThis.characterList[index - 1] = temp;
-        
+
         var obj = mThis.characterList.find(function(c){ return c.currentTurn == true; });
         var i   = mThis.characterList.findIndex(function(c){ return c == obj; });
         mThis.currentCharIndex = i
         }
       };
-    
+
     /**************************************************************************
     * updateRound */
     /**
@@ -277,10 +277,10 @@
 
       var seconds = ((mThis.roundCounter * 6) % 60);
       var minutes = (Math.floor(mThis.roundCounter / 10));
-      
+
       mThis.secondCounter = ("0" + seconds).slice(-2);
       mThis.minuteCounter = ("0" + minutes).slice(-2);
       };
-      
+
     }//END InitiativeTrackerController
   })();

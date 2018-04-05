@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /****************************************************************************
   * Constructor Factory: Skill5e
   *
@@ -24,7 +24,7 @@
       {
       /** Self reference. */
       var mThis = this;
-      
+
       /** This design pattern prevents the source object reference from being modified. */
       /** Internal Skill object. */
       var mSkill = src || {};
@@ -57,13 +57,13 @@
         {
         get: function() { return  mSkill.ability; }
         });
-      
+
       /** Accessor for double proficient skill. */
       Object.defineProperty(mThis, 'doubleProficient',
         {
         get: function(){ return mSkill.doubleProficient; }
         });
-      
+
       /** Accessor for proficient skill. */
       Object.defineProperty(mThis, 'proficient',
         {
@@ -81,12 +81,11 @@
         {
         get: function()
           {
-          return Number(mod + (mThis.Proficient ? mThis.proficiency * (mThis.doubleProficient ? 2 : 1) : 0));
+          return Number(mod + (mThis.proficient ? mThis.proficiency * (mThis.doubleProficient ? 2 : 1) : 0));
           }
         });
       }
-      
+
     return Skill5e;
     });//END Skill factory.
   })();
-  

@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /****************************************************************************
   * Constructor Factory: Ability5e
   *
@@ -24,7 +24,7 @@
       {
       /** Self reference. */
       var mThis = this;
-      
+
       /** This design pattern prevents the source object reference from being modified. */
       /** Internal Ability object. */
       var mAbility = src || {};
@@ -54,21 +54,20 @@
         {
         get: function() { return mAbility.shortName; }
         });
-      
+
       /** Accessor for Name. */
       Object.defineProperty(mThis, 'name',
         {
         get: function(){ return mAbility.name; }
         });
-      
+
       /** Accessor for Ability mod. */
       Object.defineProperty(mThis, 'mod',
         {
         get: function() { return Number(Math.floor((mThis.score - 10) / 2)); }
         });
       }
-      
+
     return Ability5e;
     });//END Ability 5e factory.
   })();
-  

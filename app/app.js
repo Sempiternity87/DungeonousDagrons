@@ -1,6 +1,6 @@
 /******************************************************************************
 * app */
-/** 
+/**
 * Main application module.
 ******************************************************************************/
 var app = angular.module("app", ["ngRoute", "ui.grid", "ui.grid.expandable", "ui.grid.autoResize", "ui.bootstrap",
@@ -8,7 +8,7 @@ var app = angular.module("app", ["ngRoute", "ui.grid", "ui.grid.expandable", "ui
 
 /******************************************************************************
 * Config - Route Provider */
-/** 
+/**
 * Configure the route provide.
 ******************************************************************************/
 app.config(function($routeProvider)

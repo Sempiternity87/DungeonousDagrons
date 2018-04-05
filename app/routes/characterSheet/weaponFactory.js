@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /****************************************************************************
   * Constructor Factory: Weapon
   *
@@ -24,7 +24,7 @@
       {
       /** Self reference. */
       var mThis = this;
-      
+
       /** This design pattern prevents the source object reference from being modified. */
       /** Internal Weapon object. */
       var mWeapon = src || {};
@@ -42,49 +42,49 @@
         {
         get: function(){ return Number(mWeapon.id); }
         });
-        
+
       /** Accessor for Ammunition. */
       Object.defineProperty(mThis, 'ammunition',
         {
         get: function(){ return mWeapon.ammunition; },
         set: function(val){ return mWeapon.ammunition = val; }
         });
-        
+
       /** Accessor for Attack Bonus. */
       Object.defineProperty(mThis, 'attackBonus',
         {
         get: function(){ return Number(mWeapon.attackBonus); },
         set: function(val){ return mWeapon.attackBonus = Number(val); }
         });
-        
+
       /** Accessor for Critical. */
       Object.defineProperty(mThis, 'critical',
         {
         get: function(){ return mWeapon.critical; },
         set: function(val){ return mWeapon.critical = val; }
         });
-        
+
       /** Accessor for Damage. */
       Object.defineProperty(mThis, 'damage',
         {
         get: function(){ return mWeapon.damage; },
         set: function(val){ return mWeapon.damage = val; }
         });
-        
+
       /** Accessor for Name. */
       Object.defineProperty(mThis, 'name',
         {
         get: function(){ return mWeapon.name; },
         set: function(val){ return mWeapon.name = val; }
         });
-        
+
       /** Accessor for Range. */
       Object.defineProperty(mThis, 'range',
         {
         get: function(){ return mWeapon.range; },
         set: function(val){ return mWeapon.range = val; }
         });
-        
+
       /** Accessor for Type. */
       Object.defineProperty(mThis, 'type',
         {
@@ -92,8 +92,7 @@
         set: function(val){ return mWeapon.type = val; }
         });
       }
-      
+
     return Weapon;
     });//END Weapon factory.
   })();
-  

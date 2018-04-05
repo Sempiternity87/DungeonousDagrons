@@ -7,16 +7,23 @@
 
   <div class="col-sm-3" style="text-align: center; padding-bottom:10px">
 
-    <div ng-repeat="ability in $ctrl.character.abilities">
+    <!--***********-->
+    <!-- Abilities -->
+    <!--***********-->
+    <div ng-repeat="ability in $ctrl.character.abilities" style="padding-top:5px">
       <label class="control-label">{{ability.name}}</label>
-      <div class="row no-gutters">
+      <div class="row no-gutters" style="padding-bottom:10px;">
         <div class="col-sm-6"><input class="form-control" style="text-align: center" type="text" ng-model="ability.score" /></div>
         <div class="col-sm-6"><input class="form-control" style="text-align: center; font-weight:bold" type="text" ng-model="ability.mod" /></div>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-9" style="text-align: center; padding-bottom:10px">
+  <!--**************************-->
+  <!-- Saving Throws and Skills -->
+  <!--**************************-->
+  <div class="col-sm-9" style="text-align: center; padding:5px">
+
     <label class="control-label" style="font-weight: bold">Saving Throws</label>
     <div class="container-fluid" style="border:solid 1px black; text-align:left">
       <div ng-repeat="save in $ctrl.character.saves">
@@ -28,7 +35,7 @@
         </div>
       </div>
     </div>
-    
+
     <label class="control-label" style="font-weight: bold">Skills</label>
     <div class="container-fluid" style="border:solid 1px black; text-align:left">
       <div ng-repeat="skill in $ctrl.character.skills">
@@ -39,6 +46,7 @@
           <label class="col-sm-1 control-label">{{skill.value}}</label>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -48,22 +56,22 @@
   <div class="row">
     <form class="form-horizontal">
       <div class="col-sm-12 form-group">
-        
+
         <label class="col-sm-1 control-label">Level</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.level"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Experience</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.experience"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Race</label>
         <div class="col-sm-2">
           <input class="form-control" type="text" ng-model="$ctrl.character.race"/>
         </div>
-        
+
         <div class="col-sm-1"></div>
       </div>
     </form>
@@ -74,12 +82,12 @@
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.size"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Height</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.height"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Hair</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.hair"/>
@@ -89,7 +97,7 @@
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.eyes"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Weight</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.weight"/>
@@ -104,17 +112,17 @@
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.gender"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Age</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.age"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Alignment</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.alignment"/>
         </div>
-        
+
         <label class="col-sm-1 control-label">Max HP</label>
         <div class="col-sm-1">
           <input class="form-control" type="text" ng-model="$ctrl.character.maxHP"/>

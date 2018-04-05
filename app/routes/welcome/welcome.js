@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /*****************************************************************************
   * Component: welcome */
   /**
@@ -14,7 +14,7 @@
     templateUrl:"app/routes/welcome/welcome.html",
     controller: WelcomeController
     });
-    
+
   /*****************************************************************************
   * WelcomeController */
   /**

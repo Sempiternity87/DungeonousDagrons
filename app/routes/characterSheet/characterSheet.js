@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /*****************************************************************************
   * Component: CharacterSheet */
   /**
@@ -14,7 +14,7 @@
     templateUrl:"app/routes/characterSheet/characterSheet.html",
     controller: CharacterSheetController
     });
-    
+
   /*****************************************************************************
   * CharacterSheetController */
   /**
@@ -23,11 +23,10 @@
   function CharacterSheetController($scope, Character)
     {
     /** Reference to self. */ var mThis = this;
-    
 
-      
 
-      
+
+
+
     }//END CharacterSheetController
   })();
-  

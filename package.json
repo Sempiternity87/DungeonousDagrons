@@ -8,7 +8,7 @@
     "url" : "https://github.com/mrradd/DungeonousDagrons"
   },
 "author":{"name": "Conrad H.", "email": "mrr4dd@gmail.com"},
-"dependencies": 
+"dependencies":
   {
   "chance": "1.0.12",
   "angular": "1.6.6",

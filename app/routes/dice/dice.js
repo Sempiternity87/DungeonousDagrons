@@ -13,7 +13,7 @@
     };
 
   angular.module("app")
- 
+
   /*****************************************************************************
   * Component: dice */
   /**
@@ -24,7 +24,7 @@
     templateUrl:"app/routes/dice/dice.html",
     controller: DiceController
     });
-    
+
   /*****************************************************************************
   * DiceController */
   /**
@@ -36,7 +36,7 @@
 
     /** List of dice. */
     mThis.dice = [];
-       
+
     /***************************************************************************
     * $onInit */
     /**
@@ -45,7 +45,7 @@
     mThis.$onInit = function()
       {
       /** Load the dice list. */
-      mThis.dice = 
+      mThis.dice =
         [
         {sides: 100, quantity: 1, modifier: 0, result: 0, image: "app/assets/images/d100.png"},
         {sides: 20,  quantity: 1, modifier: 0, result: 0, image: "app/assets/images/d20.png"},
@@ -56,7 +56,7 @@
         {sides: 4,   quantity: 1, modifier: 0, result: 0, image: "app/assets/images/d4.png"}
         ];
       };
-      
+
     /***************************************************************************
     * roll */
     /**
@@ -70,16 +70,16 @@
       var result = 0;
       var sides  = Number(die.sides);
       var qty    = Number(die.quantity);
-      
+
       die.result = 0;
-      
+
       for(; i < qty; i++)
         {
         result += Number(chance["d"+ sides]());
         }
-      
+
       die.result += Number(die.modifier) + result;
       }
-      
+
     }//END DiceController
   })();

@@ -3,7 +3,7 @@
   "use strict"
 
   angular.module("app")
- 
+
   /*****************************************************************************
   * Component: CharacterSheet */
   /**
@@ -14,7 +14,7 @@
     templateUrl:"app/routes/characterSheet5e/characterSheet5e.html",
     controller: characterSheet5eController
     });
-    
+
   /*****************************************************************************
   * CharacterSheetController */
   /**
@@ -23,7 +23,7 @@
   function characterSheet5eController($http, $scope, Character5e)
     {
     /** Reference to self. */ var mThis = this;
-    
+
 
     $http.get("app/assets/characters/Rex Darwin.json").then(function(resp)
       {
@@ -35,8 +35,7 @@
       {
       console.log(err)
       });
-    
-    
+
+
     }//END CharacterSheetController
   })();
-  
