@@ -1,0 +1,30 @@
+<!-- TODO CH  STYLE. -->
+
+<div class="container">
+  <h1>DICE</h1>
+  <div class="container" ng-repeat="die in ::$ctrl.dice">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-xs-3 col-sm-2 col-lg-1">
+          <button class="btn btn-default" ng-click="$ctrl.roll(die)"><img src="{{die.image}}" width="50px" height="50px"></img></button>
+        </div>
+
+        <label class="col-xs-2 col-sm-1">Quantity</label>
+        <div class="col-xs-2 col-sm-2">
+          <input class="form-control" type="text" ng-model="die.quantity"></input>
+        </div>
+
+        <label class="col-xs-2 col-sm-1">Modifier</label>
+        <div class="col-xs-2 col-sm-2">
+          <input class="form-control" type="text" ng-model="die.modifier"></input>
+        </div>
+
+        <label class="col-xs-2 col-sm-1">Result</label>
+        <div class="col-xs-3 col-sm-2">
+          <input class="form-control" type="text" ng-model="die.result"></input>
+        </div>
+        <div class="col-sm-1 col-lg-2"></div>
+      </div>
+    </form>
+  </div>
+</div>
