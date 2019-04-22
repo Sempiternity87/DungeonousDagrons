@@ -47,49 +47,49 @@
       Object.defineProperty(mThis, 'ammunition',
         {
         get: function(){ return mWeapon.ammunition; },
-        set: function(val){ return mWeapon.ammunition = val; }
+        set: function(val){ mWeapon.ammunition = val; }
         });
         
       /** Accessor for Attack Bonus. */
       Object.defineProperty(mThis, 'attackBonus',
         {
         get: function(){ return Number(mWeapon.attackBonus); },
-        set: function(val){ return mWeapon.attackBonus = Number(val); }
+        set: function(val){ mWeapon.attackBonus = Number(val); }
         });
         
       /** Accessor for Critical. */
       Object.defineProperty(mThis, 'critical',
         {
         get: function(){ return mWeapon.critical; },
-        set: function(val){ return mWeapon.critical = val; }
+        set: function(val){ mWeapon.critical = val; }
         });
         
       /** Accessor for Damage. */
       Object.defineProperty(mThis, 'damage',
         {
         get: function(){ return mWeapon.damage; },
-        set: function(val){ return mWeapon.damage = val; }
+        set: function(val){ mWeapon.damage = val; }
         });
         
       /** Accessor for Name. */
       Object.defineProperty(mThis, 'name',
         {
         get: function(){ return mWeapon.name; },
-        set: function(val){ return mWeapon.name = val; }
+        set: function(val){ mWeapon.name = val; }
         });
         
       /** Accessor for Range. */
       Object.defineProperty(mThis, 'range',
         {
         get: function(){ return mWeapon.range; },
-        set: function(val){ return mWeapon.range = val; }
+        set: function(val){ mWeapon.range = val; }
         });
         
       /** Accessor for Type. */
       Object.defineProperty(mThis, 'type',
         {
         get: function(){ return mWeapon.type; },
-        set: function(val){ return mWeapon.type = val; }
+        set: function(val){ mWeapon.type = val; }
         });
       }
       

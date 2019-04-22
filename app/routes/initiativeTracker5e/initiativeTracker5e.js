@@ -173,6 +173,15 @@
           }
         }
       while(swapped);
+
+      /** Reset the current character index. */
+      for(var i = 0; i < mThis.characterList.length; i++)
+        {
+        if(mThis.characterList[i].currentTurn === true)
+          {
+          mThis.currentCharIndex = i;
+          }
+        }
       };
      
     /**************************************************************************

@@ -46,43 +46,43 @@
       /** Accessor for Ability Modifier. */
       Object.defineProperty(mThis, 'abilityMod',
         {
-        get: function(){ return Number(mWeapon.abilityMod); },
-        set: function(val){ return mWeapon.abilityMod = Number(val); }
+        get: function(){ return Number(mSkill.abilityMod); },
+        set: function(val){ mSkill.abilityMod = Number(val); }
         });
       
       /** Accessor for is a Class Skill. */
       Object.defineProperty(mThis, 'isClassSkill',
         {
-        get: function(){ return mWeapon.isClassSkill; },
-        set: function(val){ return mWeapon.isClassSkill = val; }
+        get: function(){ return mSkill.isClassSkill; },
+        set: function(val){ mSkill.isClassSkill = val; }
         });
       
       /** Accessor for Miscellaneous Modifier. */
       Object.defineProperty(mThis, 'miscMod',
         {
-        get: function(){ return Number(mWeapon.miscMod); },
-        set: function(val){ return mWeapon.miscMod = Number(val); }
+        get: function(){ return Number(mSkill.miscMod); },
+        set: function(val){ mSkill.miscMod = Number(val); }
         });
       
       /** Accessor for Name. */
       Object.defineProperty(mThis, 'name',
         {
-        get: function(){ return mWeapon.name; },
-        set: function(val){ return mWeapon.name = val; }
+        get: function(){ return mSkill.name; },
+        set: function(val){ mSkill.name = val; }
         });
         
       /** Accessor for Ranks. */
       Object.defineProperty(mThis, 'ranks',
         {
-        get: function(){ return Number(mWeapon.ranks); },
-        set: function(val){ return mWeapon.ranks = Number(val); }
+        get: function(){ return Number(mSkill.ranks); },
+        set: function(val){ mSkill.ranks = Number(val); }
         });
         
       /** Accessor for Trained Only. */
       Object.defineProperty(mThis, 'trainedOnly',
         {
-        get: function(){ return mWeapon.trainedOnly; },
-        set: function(val){ return mWeapon.trainedOnly = val; }
+        get: function(){ return mSkill.trainedOnly; },
+        set: function(val){ mSkill.trainedOnly = val; }
         });
       }
       

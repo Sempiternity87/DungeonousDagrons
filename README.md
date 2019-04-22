@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# DungeonousDagrons
+Simple tools for pen and paper RPGs.
+Until the node server is up just use http-server (install from npm).
 
-You can use the [editor on GitHub](https://github.com/Sempiternity87/DungeonousDagrons/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Use:
+1) Install node on your machine.
+2) Install NPM on your machine.
+3) Install http-server using NPM.
+3) Open the command prompt and navigate to the directory where you downloaded/extracted this project to.
+e.g I extracted mine at C:\Users\[username]\stuff\DungeonousDagrons-master
+4) Navigate to the project's directory which contains the index.html file.
+4a) Run npm install at this point to get the node_mnodules.
+5) In command prompt run http-server by typing in 'http-server' and hitting enter.
+6) Using some browser navigate to the IP listed in the command prompt and have fun.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Sempiternity87/DungeonousDagrons/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+NOTE 3/29/2019: If you downloaded the zip, for some reason there is another directory called 'DungeonousDagrons-master' (looks like 
+C:\Users\[username]\stuff\DungeonousDagrons-master\DungeonousDagrons-master)-- this is the directory you want to run http server from.
+If you run it from the parent directory there is a bug which I can't figure out how to commit a change for....
